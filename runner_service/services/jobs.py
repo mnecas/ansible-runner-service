@@ -154,7 +154,7 @@ def get_events(play_uuid, filter):
                                                          len(events) - 1))
         logger.debug("Active filter is :{}".format(filter))
 
-        for event_info in events:
+        for event_info in list(events):
             if type(event_info) is not datetime.datetime:
                 event_info = filter_event(event_info, filter)
                 if event_info:
