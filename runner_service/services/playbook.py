@@ -231,6 +231,8 @@ def start_playbook(playbook_name, vars=None, filter=None, tags=None):
 
     if vars:
         parms['extravars'] = vars
+    if filter.get('extravars_file', None):
+        parms['extravars_file'] = filter.get('extravars_file')
 
     limit_hosts = filter.get('limit', None)
     if limit_hosts:
